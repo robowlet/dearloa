@@ -29,13 +29,47 @@ class CollectionsViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        self.registerNotifications()
+
     }
+    
+    deinit {
+        self.unregisterNotifications()
+    }
+
     
     private func configureTableView() {
         self.tableView.paginationDelegate = self
         
         if self.traitCollection.forceTouchCapability == .available {
             self.registerForPreviewing(with: self, sourceView: self.tableView)
+        }
+    }
+    
+    // ----------------------------------
+    //  MARK: - Notifications -
+    //
+    
+    private func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(itemCountDidChange(_:)), name: Notification.Name.CartControllerItemsDidChange, object: nil)
+    }
+    
+    private func unregisterNotifications() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    
+    @objc private func itemCountDidChange(_ notification: Notification) {
+        self.updateBadgeCount(animated: true)
+        print("Badge count change notification received")
+    }
+    
+    private func updateBadgeCount(animated: Bool) {
+        let badge = CartController.shared.itemCount
+        if badge > 0 {
+            self.navigationController?.tabBarController?.tabBar.items![1].badgeValue = "\(CartController.shared.itemCount)"
+        } else {
+            self.navigationController?.tabBarController?.tabBar.items![1].badgeValue = nil
         }
     }
     

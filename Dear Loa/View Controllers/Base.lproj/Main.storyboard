@@ -471,7 +471,7 @@ Bryce and Roz </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrh-dq-ewB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2487.1999999999998" y="3985.4572713643183"/>
+            <point key="canvasLocation" x="2522" y="3970"/>
         </scene>
         <!--Totals View Controller-->
         <scene sceneID="k1X-1k-T4e">
