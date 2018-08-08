@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="396" id="Omz-Qt-Bl8" customClass="CollectionCell" customModule="Dear_Loa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="396"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Omz-Qt-Bl8" id="JAf-AK-AmK">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="395.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTK-6q-fsT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2mQ-HD-SWi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NGM-Bf-LlK" customClass="SeparatorView" customModule="Dear_Loa" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="10" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="separatorPosition">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2mQ-HD-SWi" firstAttribute="leading" secondItem="vTK-6q-fsT" secondAttribute="leading" id="6ZU-1f-R9s"/>
+                            <constraint firstAttribute="bottom" secondItem="2mQ-HD-SWi" secondAttribute="bottom" id="Dfx-q6-JXq"/>
+                            <constraint firstAttribute="trailing" secondItem="2mQ-HD-SWi" secondAttribute="trailing" id="Zn6-NH-gIa"/>
+                            <constraint firstItem="2mQ-HD-SWi" firstAttribute="top" secondItem="vTK-6q-fsT" secondAttribute="top" id="s65-Su-bDb"/>
+                        </constraints>
+                    </view>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="T0m-Sy-eSY" customClass="StorefrontCollectionView" customModule="Dear_Loa" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="245" width="375" height="150"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="BAq-m7-v3k"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="3" minimumInteritemSpacing="3" id="U8e-CJ-WSJ">
+                            <size key="itemSize" width="90" height="90"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="cellNibName" value="ProductCell"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="dataSource" destination="Omz-Qt-Bl8" id="zoA-8I-Jwf"/>
+                            <outlet property="delegate" destination="Omz-Qt-Bl8" id="OBQ-yx-ohy"/>
+                        </connections>
+                    </collectionView>
+                </subviews>
+                <color key="backgroundColor" white="0.96660613500000003" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="T0m-Sy-eSY" firstAttribute="leading" secondItem="JAf-AK-AmK" secondAttribute="leading" id="9oV-9c-XWb"/>
+                    <constraint firstItem="T0m-Sy-eSY" firstAttribute="top" secondItem="vTK-6q-fsT" secondAttribute="bottom" id="9uS-3q-Pwu"/>
+                    <constraint firstAttribute="bottom" secondItem="T0m-Sy-eSY" secondAttribute="bottom" id="Us3-0j-b84"/>
+                    <constraint firstAttribute="trailing" secondItem="T0m-Sy-eSY" secondAttribute="trailing" id="nzv-6Y-0E3"/>
+                    <constraint firstItem="vTK-6q-fsT" firstAttribute="leading" secondItem="JAf-AK-AmK" secondAttribute="leading" id="qZS-f6-Jgl"/>
+                    <constraint firstAttribute="trailing" secondItem="vTK-6q-fsT" secondAttribute="trailing" id="tFw-zF-J3Y"/>
+                    <constraint firstItem="vTK-6q-fsT" firstAttribute="top" secondItem="JAf-AK-AmK" secondAttribute="top" id="zz7-41-HrS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="collectionView" destination="T0m-Sy-eSY" id="8qE-Tj-Ry9"/>
+                <outlet property="titleImageView" destination="2mQ-HD-SWi" id="EzI-QH-WsQ"/>
+            </connections>
+            <point key="canvasLocation" x="-462.5" y="40"/>
+        </tableViewCell>
+    </objects>
+</document>

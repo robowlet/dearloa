@@ -7,3 +7,29 @@
 //
 
 import Foundation
+import MobileBuySDK
+
+extension Storefront.PaymentQuery {
+    
+    @discardableResult
+    func fragmentForPayment() -> Storefront.PaymentQuery { return self
+        .id()
+        .ready()
+        .test()
+        .amount()
+        .checkout { $0
+            .fragmentForCheckout()
+        }
+        .creditCard { $0
+            .firstDigits()
+            .lastDigits()
+            .maskedNumber()
+            .brand()
+            .firstName()
+            .lastName()
+            .expiryMonth()
+            .expiryYear()
+        }
+        .errorMessage()
+    }
+}

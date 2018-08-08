@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import MobileBuySDK.Buy
-
+import MobileBuySDK
 
 
 final class ClientQuery {

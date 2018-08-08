@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import MobileBuySDK
+
+extension Storefront.ProductVariantConnectionQuery {
+    
+    @discardableResult
+    func fragmentForStandardVariant() -> Storefront.ProductVariantConnectionQuery { return self
+        .pageInfo { $0
+            .hasNextPage()
+        }
+        .edges { $0
+            .cursor()
+            .node { $0
+                .id()
+                .title()
+                .price()
+            }
+        }
+    }
+}

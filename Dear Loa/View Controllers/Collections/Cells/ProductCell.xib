@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="udo-my-Rwd" customClass="ProductCell" customModule="Dear_Loa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="190" height="266"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="190" height="266"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdM-LX-MQA">
+                        <rect key="frame" x="0.0" y="190" width="190" height="76"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Some awesome bracelet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ey-MG-DCZ">
+                                <rect key="frame" x="12" y="7.5" width="166" height="41"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" text="$19.95" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-Vt-GcB">
+                                <rect key="frame" x="72.5" y="51.5" width="46" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4ey-MG-DCZ" firstAttribute="centerY" secondItem="vdM-LX-MQA" secondAttribute="centerY" constant="-10" id="4GH-C3-Ffh"/>
+                            <constraint firstItem="4ey-MG-DCZ" firstAttribute="leading" secondItem="vdM-LX-MQA" secondAttribute="leading" constant="12" id="9it-V4-GA5"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hdE-Vt-GcB" secondAttribute="trailing" constant="12" id="gwd-tG-I8O"/>
+                            <constraint firstItem="hdE-Vt-GcB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vdM-LX-MQA" secondAttribute="leading" constant="12" id="lWd-bQ-fUf"/>
+                            <constraint firstItem="hdE-Vt-GcB" firstAttribute="centerX" secondItem="4ey-MG-DCZ" secondAttribute="centerX" id="tPe-D6-XAF"/>
+                            <constraint firstAttribute="trailing" secondItem="4ey-MG-DCZ" secondAttribute="trailing" constant="12" id="uxY-Uq-wXh"/>
+                            <constraint firstItem="hdE-Vt-GcB" firstAttribute="top" secondItem="4ey-MG-DCZ" secondAttribute="bottom" constant="3" id="yZy-wU-EZh"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UOw-Rp-vwi">
+                        <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="UOw-Rp-vwi" secondAttribute="height" multiplier="1:1" id="x99-pg-dVw"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UOw-Rp-vwi" firstAttribute="top" secondItem="udo-my-Rwd" secondAttribute="top" id="0L7-Rs-g2x"/>
+                <constraint firstAttribute="trailing" secondItem="UOw-Rp-vwi" secondAttribute="trailing" id="PwB-iC-s5R"/>
+                <constraint firstItem="vdM-LX-MQA" firstAttribute="top" secondItem="UOw-Rp-vwi" secondAttribute="bottom" id="XSI-Zv-XM1"/>
+                <constraint firstAttribute="trailing" secondItem="vdM-LX-MQA" secondAttribute="trailing" id="YwH-j8-jq5"/>
+                <constraint firstItem="vdM-LX-MQA" firstAttribute="leading" secondItem="udo-my-Rwd" secondAttribute="leading" id="mHe-Nj-bCM"/>
+                <constraint firstAttribute="bottom" secondItem="vdM-LX-MQA" secondAttribute="bottom" id="qvd-uP-whx"/>
+                <constraint firstItem="UOw-Rp-vwi" firstAttribute="leading" secondItem="udo-my-Rwd" secondAttribute="leading" id="u8S-qX-zAP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="e6s-Oc-SY8"/>
+            <size key="customSize" width="190" height="266"/>
+            <connections>
+                <outlet property="imageView" destination="UOw-Rp-vwi" id="WyP-JD-V8D"/>
+                <outlet property="priceLabel" destination="hdE-Vt-GcB" id="m4m-Mu-hAH"/>
+                <outlet property="titleLabel" destination="4ey-MG-DCZ" id="4AF-8P-ZIx"/>
+            </connections>
+            <point key="canvasLocation" x="-46" y="61"/>
+        </collectionViewCell>
+    </objects>
+</document>
