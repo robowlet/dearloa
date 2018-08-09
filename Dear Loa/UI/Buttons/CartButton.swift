@@ -75,11 +75,11 @@ class CartButton: UIBarButtonItem {
     private func createCartButtonView() -> CartButtonView {
         
         let cartView   = CartButtonView(type: .system)
-        let cartImage  = #imageLiteral(resourceName: "cart")
-        cartView.frame = CGRect(origin: .zero, size: cartImage.size).insetBy(dx: -10.0, dy: -5.0)
-        
+        //let cartImage  = #imageLiteral(resourceName: "cart")
+        //cartView.frame = CGRect(origin: .zero, size: cartImage.size).insetBy(dx: -10.0, dy: -5.0)
+
         cartView.contentHorizontalAlignment = .right
-        cartView.setImage(cartImage, for: .normal)
+        //cartView.setImage(cartImage, for: .normal)
         cartView.addTarget(self, action: #selector(cartAction(_:)), for: .touchUpInside)
         
         return cartView

@@ -68,6 +68,7 @@ class CollectionsViewController: UIViewController {
         let badge = CartController.shared.itemCount
         if badge > 0 {
             self.navigationController?.tabBarController?.tabBar.items![1].badgeValue = "\(CartController.shared.itemCount)"
+            self.navigationController?.tabBarController?.tabBar.items![1].badgeColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         } else {
             self.navigationController?.tabBarController?.tabBar.items![1].badgeValue = nil
         }
@@ -106,10 +107,10 @@ class CollectionsViewController: UIViewController {
 //
 extension CollectionsViewController {
     
-    @IBAction func cartAction(_ sender: Any) {
-        let cartController: CartNavigationController = self.storyboard!.instantiateViewController()
-        self.navigationController!.present(cartController, animated: true, completion: nil)
-    }
+//    @IBAction func cartAction(_ sender: Any) {
+//        let cartController: CartNavigationController = self.storyboard!.instantiateViewController()
+//        self.navigationController!.present(cartController, animated: true, completion: nil)
+//    }
 }
 
 // ----------------------------------

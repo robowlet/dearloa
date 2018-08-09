@@ -140,7 +140,7 @@ Bryce and Roz </string>
                     <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="Za8-GC-6j2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="YVr-FS-7ky">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96.5"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
@@ -167,7 +167,7 @@ Bryce and Roz </string>
                     <tabBarItem key="tabBarItem" tag="2" title="Reviews" image="menuIcon" id="Zcx-ZY-76e"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="GlB-AL-T7I">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96.5"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="40"/>
@@ -235,13 +235,7 @@ Bryce and Roz </string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hmx-5H-NxT"/>
                     </view>
-                    <navigationItem key="navigationItem" title="dear loa" largeTitleDisplayMode="always" id="M1X-fx-yUQ">
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="a0Y-Lz-ieC" customClass="CartButton" customModule="Dear_Loa" customModuleProvider="target">
-                            <connections>
-                                <action selector="cartAction:" destination="Tyl-7V-Yaa" id="ncd-pX-OYN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="dear loa" largeTitleDisplayMode="always" id="M1X-fx-yUQ"/>
                     <connections>
                         <outlet property="tableView" destination="mY2-fY-FaO" id="352-5N-a7j"/>
                         <segue destination="gSC-l0-LDI" kind="show" id="lYR-XM-Zuf"/>
@@ -293,13 +287,7 @@ Bryce and Roz </string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eLC-Is-FGC"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Products" largeTitleDisplayMode="always" id="4dd-da-xRh">
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="3pR-Hd-uN2" customClass="CartButton" customModule="Dear_Loa" customModuleProvider="target">
-                            <connections>
-                                <action selector="cartAction:" destination="gSC-l0-LDI" id="PFO-IT-8gy"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Products" largeTitleDisplayMode="always" id="4dd-da-xRh"/>
                     <connections>
                         <outlet property="collectionView" destination="9b3-fH-JkL" id="vmz-gv-fyd"/>
                         <segue destination="Rwn-I1-sS0" kind="show" id="Zjk-7V-t8G"/>
@@ -341,13 +329,7 @@ Bryce and Roz </string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6k5-yo-MuN"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" largeTitleDisplayMode="always" id="ChO-Z4-oAC">
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="uvF-ag-0Fn" customClass="CartButton" customModule="Dear_Loa" customModuleProvider="target">
-                            <connections>
-                                <action selector="cartAction:" destination="Rwn-I1-sS0" id="sae-Iv-2pt"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Details" largeTitleDisplayMode="always" id="ChO-Z4-oAC"/>
                     <connections>
                         <outlet property="headerView" destination="HLq-nN-dhx" id="Nsn-VW-S1Y"/>
                         <outlet property="scrollView" destination="3oz-PV-Sjb" id="OSx-8z-LNh"/>
@@ -384,7 +366,7 @@ Bryce and Roz </string>
                     <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="fzY-34-bZz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="UKP-uX-OUW">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96.5"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
@@ -456,13 +438,7 @@ Bryce and Roz </string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ipx-k2-xCP"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shopping Bag" id="xby-Gp-VhM">
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="8Dp-OH-qUR" customClass="CartButton" customModule="Dear_Loa" customModuleProvider="target">
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="userInteractionEnabled" value="NO"/>
-                            </userDefinedRuntimeAttributes>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Shopping Bag" id="xby-Gp-VhM"/>
                     <connections>
                         <outlet property="headerView" destination="zAZ-B4-0Bx" id="Dz3-lj-Nsq"/>
                         <outlet property="scrollView" destination="uCG-1K-a4q" id="Sld-ia-ay1"/>
