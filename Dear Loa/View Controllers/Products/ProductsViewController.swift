@@ -24,6 +24,7 @@ class ProductsViewController: UIViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = collection.title
         navigationController?.navigationBar.tintColor = .white
         
         self.configureCollectionView()
