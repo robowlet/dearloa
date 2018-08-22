@@ -28,15 +28,28 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AJh-gs-ll7">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AJh-gs-ll7">
                         <rect key="frame" x="15" y="15" width="330" height="77"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Some awesome bracelet with something else" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXJ-yX-o30">
-                                <rect key="frame" x="0.0" y="29" width="223" height="48"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <color key="textColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-TK-b60">
+                                <rect key="frame" x="0.0" y="11" width="223" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIb-84-8bg">
+                                        <rect key="frame" x="0.0" y="0.0" width="223" height="30"/>
+                                        <color key="backgroundColor" red="0.90077728426395942" green="0.90077728426395942" blue="0.90077728426395942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Select a Size">
+                                            <color key="titleColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E3-za-xTM">
+                                        <rect key="frame" x="0.0" y="36" width="223" height="30"/>
+                                        <color key="backgroundColor" red="0.89986516497461932" green="0.89986516497461932" blue="0.89986516497461932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Select a Color">
+                                            <color key="titleColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcl-S2-4bi" customClass="SubtitleButton" customModule="Dear_Loa" customModuleProvider="target">
                                 <rect key="frame" x="243" y="47" width="87" height="30"/>
                                 <color key="backgroundColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,8 +77,9 @@
             </tableViewCellContentView>
             <inset key="separatorInset" minX="9999" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
+                <outlet property="colorButton" destination="5E3-za-xTM" id="xVZ-yx-CMx"/>
                 <outlet property="priceButton" destination="vcl-S2-4bi" id="QID-07-LQe"/>
-                <outlet property="titleLabel" destination="nXJ-yX-o30" id="LHu-HP-pzI"/>
+                <outlet property="sizeButton" destination="uIb-84-8bg" id="81P-fp-n0W"/>
             </connections>
             <point key="canvasLocation" x="97" y="76.5"/>
         </tableViewCell>

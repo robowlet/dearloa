@@ -9,6 +9,41 @@
 import Foundation
 import MobileBuySDK
 
+//qwerty2
+struct VariantBuilder {
+    static func getSizes(product: ProductViewModel) -> [String] {
+        var sizes = [String]()
+        for variant in product.variants.items {
+            let string = variant.title
+            let size = string.split(separator: "/")[0].trimmingCharacters(in: .whitespacesAndNewlines)
+            if !sizes.contains(size) {
+                sizes.append(size) // assuming the array sorts them correctly
+            }
+        }
+        return sizes
+    }
+    
+    static func getColors(product: ProductViewModel) -> [String] {
+        var colors = [String]()
+        for variant in product.variants.items {
+            let string = variant.title
+            let color = string.split(separator: "/")[0].trimmingCharacters(in: .whitespacesAndNewlines)
+            if !colors.contains(color) {
+                colors.append(color) // assuming the array sorts them correctly
+            }
+        }
+        return colors
+    }
+    
+    func getVariant(from product: ProductViewModel, for size: String, and color: String) -> VariantViewModel {
+        // combine size and color with a " / " in the middle
+        // querry the product.variants.items.titles for a match
+        // grab the matching index
+        // retun the variant at that index
+        return product.variants.items.first!
+    }
+}
+
 final class ProductViewModel: ViewModel {
     
     typealias ModelType = Storefront.ProductEdge

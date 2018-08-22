@@ -16,9 +16,16 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable {
     typealias ViewModelType = ProductViewModel
     
     weak var delegate: ProductHeaderDelegate?
+    //qwerty
+    //var sizeTappedCompletion: (() -> Void)?
     
     @IBOutlet private weak var titleLabel:  UILabel!
     @IBOutlet private weak var priceButton: UIButton!
+    
+    ///////////////////////
+    @IBOutlet weak var sizeButton: UIButton!
+    @IBOutlet weak var colorButton: UIButton!
+    //////////////////////
     
     var viewModel: ViewModelType?
     
@@ -28,8 +35,13 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable {
     func configureFrom(_ viewModel: ViewModelType) {
         self.viewModel = viewModel
         
-        self.titleLabel.text = viewModel.title
+        //self.titleLabel.text = viewModel.title
         self.priceButton.setTitle(viewModel.price, for: .normal)
+        
+        /////////////////////
+        self.sizeButton.layer.cornerRadius = 4
+        self.colorButton.layer.cornerRadius = 4
+        ////////////////////
     }
 }
 
@@ -38,4 +50,7 @@ extension ProductHeaderCell {
     @IBAction func addToCartAction(_ sender: Any) {
         self.delegate?.productHeader(self, didAddToCart: sender)
     }
+//    @IBAction func sizeButtonTapped(_ sender: Any) {
+//        sizeTappedCompletion?()
+//    }
 }
