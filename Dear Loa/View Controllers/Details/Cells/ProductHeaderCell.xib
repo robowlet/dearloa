@@ -29,29 +29,35 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AJh-gs-ll7">
-                        <rect key="frame" x="15" y="15" width="330" height="77"/>
+                        <rect key="frame" x="15" y="15" width="330" height="76.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-TK-b60">
-                                <rect key="frame" x="0.0" y="11" width="223" height="66"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-TK-b60">
+                                <rect key="frame" x="0.0" y="10.5" width="223" height="66"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIb-84-8bg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIb-84-8bg">
                                         <rect key="frame" x="0.0" y="0.0" width="223" height="30"/>
                                         <color key="backgroundColor" red="0.90077728426395942" green="0.90077728426395942" blue="0.90077728426395942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Select a Size">
                                             <color key="titleColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sizeButtonTapped:" destination="srx-j6-PPm" eventType="touchUpInside" id="9Qw-Mk-YtG"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E3-za-xTM">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E3-za-xTM">
                                         <rect key="frame" x="0.0" y="36" width="223" height="30"/>
                                         <color key="backgroundColor" red="0.89986516497461932" green="0.89986516497461932" blue="0.89986516497461932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Select a Color">
                                             <color key="titleColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="colorButtonTapped:" destination="srx-j6-PPm" eventType="touchUpInside" id="hl0-Zn-a7F"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcl-S2-4bi" customClass="SubtitleButton" customModule="Dear_Loa" customModuleProvider="target">
-                                <rect key="frame" x="243" y="47" width="87" height="30"/>
+                                <rect key="frame" x="243" y="46.5" width="87" height="30"/>
                                 <color key="backgroundColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="5" maxX="20" maxY="4"/>

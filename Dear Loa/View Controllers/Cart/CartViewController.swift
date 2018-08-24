@@ -109,16 +109,29 @@ class CartViewController: ParallaxViewController {
             PayLineItem(price: item.individualPrice, quantity: item.quantity)
         }
         
+//        let payCheckout = PayCheckout(
+//            id:              checkout.id,
+//            lineItems:       payItems,
+//            discount:        nil,
+//            shippingAddress: nil,
+//            shippingRate:    nil,
+//            subtotalPrice:   checkout.subtotalPrice,
+//            needsShipping:   checkout.requiresShipping,
+//            totalTax:        checkout.totalTax,
+//            paymentDue:      checkout.paymentDue
+//        )
+        
         let payCheckout = PayCheckout(
-            id:              checkout.id,
-            lineItems:       payItems,
-            discount:        nil,
-            shippingAddress: nil,
-            shippingRate:    nil,
-            subtotalPrice:   checkout.subtotalPrice,
-            needsShipping:   checkout.requiresShipping,
-            totalTax:        checkout.totalTax,
-            paymentDue:      checkout.paymentDue
+            id:                 checkout.id,
+            lineItems:          payItems,
+            giftCards:          nil,
+            discount:           nil,
+            shippingAddress:    nil,
+            shippingRate:       nil,
+            subtotalPrice:      checkout.subtotalPrice,
+            needsShipping:      checkout.requiresShipping,
+            totalTax:           checkout.totalTax,
+            paymentDue:         checkout.paymentDue
         )
         
         let paySession      = PaySession(shopName: shopName, checkout: payCheckout, currency: payCurrency, merchantID: Client.merchantID)

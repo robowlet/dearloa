@@ -17,17 +17,29 @@ extension CheckoutViewModel {
             PayLineItem(price: item.individualPrice, quantity: item.quantity)
         }
         
+//        return PayCheckout(
+//            id:              self.id,
+//            lineItems:       payItems,
+//            discount:        nil,
+//            shippingAddress: self.shippingAddress?.payAddress,
+//            shippingRate:    self.shippingRate?.payShippingRate,
+//            subtotalPrice:   self.subtotalPrice,
+//            needsShipping:   self.requiresShipping,
+//            totalTax:        self.totalTax,
+//            paymentDue:      self.paymentDue
+//        )
+        
         return PayCheckout(
-            id:              self.id,
-            lineItems:       payItems,
-            discount:        nil,
-            shippingAddress: self.shippingAddress?.payAddress,
-            shippingRate:    self.shippingRate?.payShippingRate,
-            subtotalPrice:   self.subtotalPrice,
-            needsShipping:   self.requiresShipping,
-            totalTax:        self.totalTax,
-            paymentDue:      self.paymentDue
-        )
+            id:                 self.id,
+            lineItems:          payItems,
+            giftCards:          nil,
+            discount:           nil,
+            shippingAddress:    self.shippingAddress?.payAddress,
+            shippingRate:       self.shippingRate?.payShippingRate,
+            subtotalPrice:      self.subtotalPrice,
+            needsShipping:      self.requiresShipping,
+            totalTax:           self.totalTax,
+            paymentDue:         self.paymentDue)
     }
 }
 

@@ -12,7 +12,34 @@ protocol ProductHeaderDelegate: class {
     func productHeader(_ cell: ProductHeaderCell, didAddToCart sender: Any)
 }
 
-class ProductHeaderCell: UITableViewCell, ViewModelConfigurable {
+class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    //////////////////////////////
+    // SIZE PICKER
+    private var sizePicker: UIPickerView!
+    private let sizeValues: NSArray = ["0-3 months", "3-6 months", "6-9 months", "9-12 months", "12-18 months", "18-24 months", "2T", "3T", "4T"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {return 1}
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {return sizeValues.count}
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {return sizeValues[row] as? String}
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("row: \(row)")
+        print("value: \(sizeValues[row])")
+        sizeButton.titleLabel?.text = "\(sizeValues[row])"
+        sizePicker.isHidden = true
+//        colorButton.titleLabel?.text = "\(colorValues[row])"
+//        colorPicker.isHidden = true
+        
+    }
+    
+    // COLOR PICKER
+    private var colorPicker: UIPickerView!
+    private let colorValues: NSArray = ["Blue", "Green", "Red", "Yellow", "Black", "Pink", "White", "Gold"]
+    
+    
+    
+    /////////////////////////////
+    
     typealias ViewModelType = ProductViewModel
     
     weak var delegate: ProductHeaderDelegate?
@@ -25,6 +52,26 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable {
     ///////////////////////
     @IBOutlet weak var sizeButton: UIButton!
     @IBOutlet weak var colorButton: UIButton!
+    
+    @IBAction func sizeButtonTapped(_ sender: Any) {
+        sizePicker = UIPickerView()
+        
+        sizePicker.frame = CGRect(x: 0, y: 0, width: (self.superview?.bounds.width)!, height: 100.0)
+        sizePicker.delegate = self
+        sizePicker.dataSource = self
+        sizePicker.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.superview?.addSubview(sizePicker)
+        //sizeButton.titleLabel?.text = "ahdfkahkh"
+    }
+
+    @IBAction func colorButtonTapped(_ sender: Any) {
+        colorPicker = UIPickerView()
+        colorPicker.frame = CGRect(x: 0, y: 0, width: (self.superview?.bounds.width)!, height: 100.0)
+        colorPicker.delegate = self
+        colorPicker.dataSource = self
+        colorPicker.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.superview?.addSubview(colorPicker)
+    }
     //////////////////////
     
     var viewModel: ViewModelType?
