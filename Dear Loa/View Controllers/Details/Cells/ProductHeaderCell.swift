@@ -15,17 +15,63 @@ protocol ProductHeaderDelegate: class {
 class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDataSource, UIPickerViewDelegate {
     
     //////////////////////////////
-    // SIZE PICKER
-    private var sizePicker: UIPickerView!
-    private let sizeValues: NSArray = ["0-3 months", "3-6 months", "6-9 months", "9-12 months", "12-18 months", "18-24 months", "2T", "3T", "4T"]
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {return 1}
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {return sizeValues.count}
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {return sizeValues[row] as? String}
+    let sizes = ["0-3 months",
+                 "3-6 months",
+                 "6-9 months",
+                 "9-12 months",
+                 "12-18 months",
+                 "18-24 months",
+                 "2T",
+                 "3T",
+                 "4T"]
+    
+    var selectedSize: String?
+
+    
+    func createSizePicker() {
+        let sizePicker = UIPickerView()
+        sizePicker.delegate = self
+        
+        //sizeButton = sizePicker
+    }
+    
+    
+    // SIZE PICKER
+    
+    
+    
+    private var sizePicker: UIPickerView!
+    private let sizeValues: NSArray = ["0-3 months",
+                                       "3-6 months",
+                                       "6-9 months",
+                                       "9-12 months",
+                                       "12-18 months",
+                                       "18-24 months",
+                                       "2T",
+                                       "3T",
+                                       "4T"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return sizeValues.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return sizeValues[row] as? String
+    }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("row: \(row)")
         print("value: \(sizeValues[row])")
         sizeButton.titleLabel?.text = "\(sizeValues[row])"
+        sizePicker.showsSelectionIndicator = true
+
+        
         sizePicker.isHidden = true
 //        colorButton.titleLabel?.text = "\(colorValues[row])"
 //        colorPicker.isHidden = true
@@ -34,7 +80,14 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     
     // COLOR PICKER
     private var colorPicker: UIPickerView!
-    private let colorValues: NSArray = ["Blue", "Green", "Red", "Yellow", "Black", "Pink", "White", "Gold"]
+    private let colorValues: NSArray = ["Blue",
+                                        "Green",
+                                        "Red",
+                                        "Yellow",
+                                        "Black",
+                                        "Pink",
+                                        "White",
+                                        "Gold"]
     
     
     
@@ -43,6 +96,7 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     typealias ViewModelType = ProductViewModel
     
     weak var delegate: ProductHeaderDelegate?
+    
     //qwerty
     //var sizeTappedCompletion: (() -> Void)?
     
@@ -101,3 +155,4 @@ extension ProductHeaderCell {
 //        sizeTappedCompletion?()
 //    }
 }
+

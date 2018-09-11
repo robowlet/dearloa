@@ -42,7 +42,6 @@
 		702C6C8E2110A44F00A62AC8 /* CreditCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C6C8D2110A44F00A62AC8 /* CreditCardViewModel.swift */; };
 		70847F6F210A175D0091C13D /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70847F6E210A175D0091C13D /* Client.swift */; };
 		70847F71210A1AE50091C13D /* ClientQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70847F70210A1AE50091C13D /* ClientQuery.swift */; };
-		708B9B2B20FF8BA4009F9E9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708B9B2A20FF8BA4009F9E9B /* GoogleService-Info.plist */; };
 		708D71D82110A50D00DC7E05 /* CheckoutViewModel+PayCheckout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D71D72110A50D00DC7E05 /* CheckoutViewModel+PayCheckout.swift */; };
 		708D71DA2110A5D900DC7E05 /* AddressViewModel+PayAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D71D92110A5D900DC7E05 /* AddressViewModel+PayAddress.swift */; };
 		708D71DC2110A60400DC7E05 /* ShippingRateViewModel+PayShippingRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D71DB2110A60400DC7E05 /* ShippingRateViewModel+PayShippingRate.swift */; };
@@ -83,6 +82,7 @@
 		708D72352110BBA300DC7E05 /* ProductHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708D72342110BBA300DC7E05 /* ProductHeaderCell.xib */; };
 		708D72372110BBE300DC7E05 /* ProductDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708D72362110BBE300DC7E05 /* ProductDetailsCell.xib */; };
 		708D72392110BC3C00DC7E05 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708D72382110BC3C00DC7E05 /* CartCell.xib */; };
+		70D4A9B8213ECCB100F53E43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70D4A9B7213ECCB100F53E43 /* GoogleService-Info.plist */; };
 		70F8CD5B20FE3ECD00DF3904 /* reviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8CD5A20FE3ECD00DF3904 /* reviewsViewController.swift */; };
 		BA56D8181AF2D27362A6E235 /* Pods_Dear_LoaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4061D70FB6CE3737C9ACC /* Pods_Dear_LoaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -149,7 +149,6 @@
 		702C6C8D2110A44F00A62AC8 /* CreditCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewModel.swift; sourceTree = "<group>"; };
 		70847F6E210A175D0091C13D /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		70847F70210A1AE50091C13D /* ClientQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientQuery.swift; sourceTree = "<group>"; };
-		708B9B2A20FF8BA4009F9E9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		708D71D72110A50D00DC7E05 /* CheckoutViewModel+PayCheckout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckoutViewModel+PayCheckout.swift"; sourceTree = "<group>"; };
 		708D71D92110A5D900DC7E05 /* AddressViewModel+PayAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressViewModel+PayAddress.swift"; sourceTree = "<group>"; };
 		708D71DB2110A60400DC7E05 /* ShippingRateViewModel+PayShippingRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShippingRateViewModel+PayShippingRate.swift"; sourceTree = "<group>"; };
@@ -190,6 +189,7 @@
 		708D72342110BBA300DC7E05 /* ProductHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductHeaderCell.xib; sourceTree = "<group>"; };
 		708D72362110BBE300DC7E05 /* ProductDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsCell.xib; sourceTree = "<group>"; };
 		708D72382110BC3C00DC7E05 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		70D4A9B7213ECCB100F53E43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70F8CD5A20FE3ECD00DF3904 /* reviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewsViewController.swift; sourceTree = "<group>"; };
 		78016355936392B643FAECBD /* Pods-Dear LoaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear LoaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dear LoaTests/Pods-Dear LoaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		93E66394D3BF8B902D6F6C53 /* Pods-Dear Loa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Loa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dear Loa/Pods-Dear Loa.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 				7017D0CC20F65A820078D984 /* DLTabBarController.swift */,
 				7010F6AA20FCDDE900C9F8FF /* HomeViewController.swift */,
 				70F8CD5A20FE3ECD00DF3904 /* reviewsViewController.swift */,
-				708B9B2A20FF8BA4009F9E9B /* GoogleService-Info.plist */,
+				70D4A9B7213ECCB100F53E43 /* GoogleService-Info.plist */,
 				7017D0A020F4F4250078D984 /* Dear_Loa.xcdatamodeld */,
 				7017D0A820F4F4270078D984 /* Info.plist */,
 				708D71E02110A8FC00DC7E05 /* Formatters */,
@@ -675,8 +675,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7017D0A720F4F4270078D984 /* LaunchScreen.storyboard in Resources */,
-				708B9B2B20FF8BA4009F9E9B /* GoogleService-Info.plist in Resources */,
 				708D72372110BBE300DC7E05 /* ProductDetailsCell.xib in Resources */,
+				70D4A9B8213ECCB100F53E43 /* GoogleService-Info.plist in Resources */,
 				708D72392110BC3C00DC7E05 /* CartCell.xib in Resources */,
 				708D72312110B87E00DC7E05 /* ProductCell.xib in Resources */,
 				708D72332110BB5800DC7E05 /* CollectionCell.xib in Resources */,

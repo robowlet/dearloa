@@ -140,7 +140,7 @@ Bryce and Roz </string>
                     <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="Za8-GC-6j2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="YVr-FS-7ky">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
@@ -167,7 +167,7 @@ Bryce and Roz </string>
                     <tabBarItem key="tabBarItem" tag="2" title="Reviews" image="menuIcon" id="Zcx-ZY-76e"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="GlB-AL-T7I">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="40"/>
@@ -366,7 +366,7 @@ Bryce and Roz </string>
                     <tabBarItem key="tabBarItem" title="Home" image="homeIcon" id="fzY-34-bZz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="UKP-uX-OUW">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>

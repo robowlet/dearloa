@@ -21,6 +21,7 @@ class CollectionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.configureTableView()
         
         Client.shared.fetchCollections { collections in
@@ -243,6 +244,7 @@ extension CollectionsViewController: UITableViewDataSource {
         let height = width * 0.75 // 3:4 ratio
         
         return height + 150.0 // 150 is the height of the product collection
+        
     }
 }
 
