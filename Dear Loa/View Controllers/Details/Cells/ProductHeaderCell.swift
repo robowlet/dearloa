@@ -14,17 +14,13 @@ protocol ProductHeaderDelegate: class {
 
 class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var sizeTextField: UITextField!
+    @IBOutlet weak var colorTextField: UITextField!
+    
     //////////////////////////////
     
-    let sizes = ["0-3 months",
-                 "3-6 months",
-                 "6-9 months",
-                 "9-12 months",
-                 "12-18 months",
-                 "18-24 months",
-                 "2T",
-                 "3T",
-                 "4T"]
+ 
+    
     
     var selectedSize: String?
 
@@ -32,8 +28,6 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     func createSizePicker() {
         let sizePicker = UIPickerView()
         sizePicker.delegate = self
-        
-        //sizeButton = sizePicker
     }
     
     
@@ -68,11 +62,10 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("row: \(row)")
         print("value: \(sizeValues[row])")
-        sizeButton.titleLabel?.text = "\(sizeValues[row])"
-        sizePicker.showsSelectionIndicator = true
+        sizeTextField.placeholder = "\(sizeValues[row])"
+        //sizeButton.titleLabel?.text = "\(sizeValues[row])"
+        //sizePicker.showsSelectionIndicator = true
 
-        
-        sizePicker.isHidden = true
 //        colorButton.titleLabel?.text = "\(colorValues[row])"
 //        colorPicker.isHidden = true
         
@@ -103,31 +96,6 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     @IBOutlet private weak var titleLabel:  UILabel!
     @IBOutlet private weak var priceButton: UIButton!
     
-    ///////////////////////
-    @IBOutlet weak var sizeButton: UIButton!
-    @IBOutlet weak var colorButton: UIButton!
-    
-    @IBAction func sizeButtonTapped(_ sender: Any) {
-        sizePicker = UIPickerView()
-        
-        sizePicker.frame = CGRect(x: 0, y: 0, width: (self.superview?.bounds.width)!, height: 100.0)
-        sizePicker.delegate = self
-        sizePicker.dataSource = self
-        sizePicker.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.superview?.addSubview(sizePicker)
-        //sizeButton.titleLabel?.text = "ahdfkahkh"
-    }
-
-    @IBAction func colorButtonTapped(_ sender: Any) {
-        colorPicker = UIPickerView()
-        colorPicker.frame = CGRect(x: 0, y: 0, width: (self.superview?.bounds.width)!, height: 100.0)
-        colorPicker.delegate = self
-        colorPicker.dataSource = self
-        colorPicker.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.superview?.addSubview(colorPicker)
-    }
-    //////////////////////
-    
     var viewModel: ViewModelType?
     
     // ----------------------------------
@@ -138,11 +106,51 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
         
         //self.titleLabel.text = viewModel.title
         self.priceButton.setTitle(viewModel.price, for: .normal)
+        priceButton.isEnabled = false
+        priceButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        setupPicker()
+    }
+    
+    func setupPicker() {
+        // UIPickerView
+        let picker: UIPickerView
+        picker = UIPickerView()
+        picker.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
         
-        /////////////////////
-        self.sizeButton.layer.cornerRadius = 4
-        self.colorButton.layer.cornerRadius = 4
-        ////////////////////
+        // ToolBar
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(displayP3Red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        // Adding Button ToolBar
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(doneClicked(sender:)))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(doneClicked(sender:)))
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        doneButton.tintColor = #colorLiteral(red: 0.1529411765, green: 0.168627451, blue: 0.2078431373, alpha: 1)
+        cancelButton.tintColor = #colorLiteral(red: 0.1529411765, green: 0.168627451, blue: 0.2078431373, alpha: 1)
+        
+        sizeTextField.inputView = picker
+        sizeTextField.tintColor = UIColor.clear // hides the cursor
+        sizeTextField.inputAccessoryView = toolBar
+        
+//        colorTextField.inputView = picker
+//        colorTextField.inputAccessoryView = toolBar
+        
+    }
+    
+    @objc func doneClicked (sender: UIBarButtonItem) {
+        self.sizeTextField.resignFirstResponder()
+        priceButton.isEnabled = true
+        priceButton.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.5058823529, blue: 0.537254902, alpha: 1)
     }
 }
 
@@ -155,4 +163,14 @@ extension ProductHeaderCell {
 //        sizeTappedCompletion?()
 //    }
 }
+
+//var currentSize = [Picker]
+//var currentColor = [Picker]
+//for variant in Product.variant {
+//    if currentSize == variant.size {
+//
+//    }
+//}
+
+
 

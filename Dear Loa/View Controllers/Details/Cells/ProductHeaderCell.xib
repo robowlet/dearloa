@@ -28,50 +28,63 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AJh-gs-ll7">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AJh-gs-ll7">
                         <rect key="frame" x="15" y="15" width="330" height="76.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="j2I-TK-b60">
-                                <rect key="frame" x="0.0" y="10.5" width="223" height="66"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="rcM-lQ-T9H">
+                                <rect key="frame" x="0.0" y="9.5" width="221" height="67"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIb-84-8bg">
-                                        <rect key="frame" x="0.0" y="0.0" width="223" height="30"/>
-                                        <color key="backgroundColor" red="0.90077728426395942" green="0.90077728426395942" blue="0.90077728426395942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Select a Size">
-                                            <color key="titleColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sizeButtonTapped:" destination="srx-j6-PPm" eventType="touchUpInside" id="9Qw-Mk-YtG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E3-za-xTM">
-                                        <rect key="frame" x="0.0" y="36" width="223" height="30"/>
-                                        <color key="backgroundColor" red="0.89986516497461932" green="0.89986516497461932" blue="0.89986516497461932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Select a Color">
-                                            <color key="titleColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="colorButtonTapped:" destination="srx-j6-PPm" eventType="touchUpInside" id="hl0-Zn-a7F"/>
-                                        </connections>
-                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select a Size" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KyI-nw-Ycq">
+                                        <rect key="frame" x="0.0" y="0.0" width="221" height="30"/>
+                                        <color key="backgroundColor" red="0.84317496827411165" green="0.84317496827411165" blue="0.84317496827411165" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                <color key="value" red="0.76470588235294112" green="0.5490196078431373" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select a Color" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ww-LK-fZw">
+                                        <rect key="frame" x="0.0" y="37" width="221" height="30"/>
+                                        <color key="backgroundColor" red="0.84317496827411165" green="0.84317496827411165" blue="0.84317496827411165" alpha="0.50695633561643838" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                <color key="value" red="0.76470588235294112" green="0.5490196078431373" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="RDd-QP-H8H"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcl-S2-4bi" customClass="SubtitleButton" customModule="Dear_Loa" customModuleProvider="target">
-                                <rect key="frame" x="243" y="46.5" width="87" height="30"/>
+                                <rect key="frame" x="237" y="0.0" width="93" height="76.5"/>
                                 <color key="backgroundColor" red="0.76470588240000004" green="0.54901960780000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="5" maxX="20" maxY="4"/>
                                 <state key="normal" title="$13.99">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="subtitle" value="Add to Cart"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addToCartAction:" destination="srx-j6-PPm" eventType="touchUpInside" id="7MQ-lo-Q1n"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="vcl-S2-4bi" firstAttribute="top" secondItem="AJh-gs-ll7" secondAttribute="top" id="vUi-D3-ZXM"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -83,9 +96,9 @@
             </tableViewCellContentView>
             <inset key="separatorInset" minX="9999" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
-                <outlet property="colorButton" destination="5E3-za-xTM" id="xVZ-yx-CMx"/>
+                <outlet property="colorTextField" destination="2ww-LK-fZw" id="rsk-qs-fNa"/>
                 <outlet property="priceButton" destination="vcl-S2-4bi" id="QID-07-LQe"/>
-                <outlet property="sizeButton" destination="uIb-84-8bg" id="81P-fp-n0W"/>
+                <outlet property="sizeTextField" destination="KyI-nw-Ycq" id="F87-0t-Ld5"/>
             </connections>
             <point key="canvasLocation" x="97" y="76.5"/>
         </tableViewCell>

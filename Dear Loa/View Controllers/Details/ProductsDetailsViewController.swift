@@ -35,6 +35,8 @@ class ProductDetailsViewController: ParallaxViewController {
         }
     }
     
+    
+    
     // ----------------------------------
     //  MARK: - View Loading -
     //
