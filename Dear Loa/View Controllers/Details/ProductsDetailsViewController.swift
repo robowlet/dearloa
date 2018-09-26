@@ -15,6 +15,8 @@ private enum CellKind: Int {
 
 class ProductDetailsViewController: ParallaxViewController {
     
+  
+    
     @IBOutlet private weak var tableView: UITableView!
     
     var product: ProductViewModel!

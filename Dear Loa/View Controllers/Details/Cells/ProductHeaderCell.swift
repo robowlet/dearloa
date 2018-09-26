@@ -154,10 +154,26 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     }
 }
 
+
 extension ProductHeaderCell {
     
+
     @IBAction func addToCartAction(_ sender: Any) {
         self.delegate?.productHeader(self, didAddToCart: sender)
+        
+//        // the alert view
+//        let alert = UIAlertController(title: "", message: "alert disappears after 5 seconds", preferredStyle: .alert)
+//        self.present(alert, animated: true, completion: nil)
+//        
+//        // change to desired number of seconds (in this case 5 seconds)
+//        let when = DispatchTime.now() + 5
+//        DispatchQueue.main.asyncAfter(deadline: when){
+//            // your code with delay
+//            alert.dismiss(animated: true, completion: nil)
+//        }
+//        
+        
+        
     }
 //    @IBAction func sizeButtonTapped(_ sender: Any) {
 //        sizeTappedCompletion?()
