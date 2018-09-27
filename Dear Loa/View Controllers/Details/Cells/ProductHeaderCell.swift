@@ -17,12 +17,24 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     @IBOutlet weak var sizeTextField: UITextField!
     @IBOutlet weak var colorTextField: UITextField!
     
+    @IBAction func sizeTapped(_ sender: Any) {
+        pickerValues = sizeValues
+        pickerDidSelectValue = { row in
+            self.sizeTextField.placeholder = self.sizeValues[row]
+            self.selectedSize = self.sizeValues[row]
+            // set the size on the selected item in the cart...?
+        }
+    }
+    @IBAction func colorTapped(_ sender: Any) {
+        pickerValues = colorValues
+        pickerDidSelectValue = { row in
+            self.colorTextField.placeholder = self.colorValues[row]
+            self.selectedColor = self.colorValues[row]
+            // set the color on the selected item in the cart...?
+        }
+    }
     //////////////////////////////
     
- 
-    
-    
-    var selectedSize: String?
 
     
     func createSizePicker() {
@@ -36,54 +48,53 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     
     
     private var sizePicker: UIPickerView!
-    private let sizeValues: NSArray = ["0-3 months",
-                                       "3-6 months",
-                                       "6-9 months",
-                                       "9-12 months",
-                                       "12-18 months",
-                                       "18-24 months",
-                                       "2T",
-                                       "3T",
-                                       "4T"]
+    private let sizeValues = ["0-3 months",
+                              "3-6 months",
+                              "6-9 months",
+                              "9-12 months",
+                              "12-18 months",
+                              "18-24 months",
+                              "2T",
+                              "3T",
+                              "4T"]
+    
+    // COLOR PICKER
+    private var colorPicker: UIPickerView!
+    private let colorValues = ["Cream Floral",
+                               "Nutmeg Gingham",
+                               "Fall Liberty Floral",
+                               "Navy",
+                               "Charcoal Grey",
+                               "Pink",
+                               "White",
+                               "Gold",
+                               "Blah"]
+    
+    var pickerValues = [String]()
+    var pickerDidSelectValue: ((Int) -> Void)?
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sizeValues.count
+        return pickerValues.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return sizeValues[row] as? String
+        return pickerValues[row] as? String
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("row: \(row)")
-        print("value: \(sizeValues[row])")
-        sizeTextField.placeholder = "\(sizeValues[row])"
-        //sizeButton.titleLabel?.text = "\(sizeValues[row])"
-        //sizePicker.showsSelectionIndicator = true
-
-//        colorButton.titleLabel?.text = "\(colorValues[row])"
-//        colorPicker.isHidden = true
+        print("value: \(pickerValues[row])")
+        pickerDidSelectValue?(row)
         
+//        sizeTextField.placeholder = "\(sizeValues[row])"
+//        colorTextField.placeholder = "\(colorValues[row])"
     }
     
-    // COLOR PICKER
-    private var colorPicker: UIPickerView!
-    private let colorValues: NSArray = ["Blue",
-                                        "Green",
-                                        "Red",
-                                        "Yellow",
-                                        "Black",
-                                        "Pink",
-                                        "White",
-                                        "Gold"]
-    
-    
-    
+
     /////////////////////////////
     
     typealias ViewModelType = ProductViewModel
@@ -108,18 +119,18 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
         self.priceButton.setTitle(viewModel.price, for: .normal)
         priceButton.isEnabled = false
         priceButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        setupPicker()
+        setupPickers()
     }
     
-    func setupPicker() {
+    func setupPickers() {
         // UIPickerView
-        let picker: UIPickerView
-        picker = UIPickerView()
-        picker.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let sizePicker: UIPickerView
+        sizePicker = UIPickerView()
+        sizePicker.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 
-        picker.showsSelectionIndicator = true
-        picker.delegate = self
-        picker.dataSource = self
+        sizePicker.showsSelectionIndicator = true
+        sizePicker.delegate = self
+        sizePicker.dataSource = self
         
         // ToolBar
         let toolBar = UIToolbar()
@@ -138,19 +149,42 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
         doneButton.tintColor = #colorLiteral(red: 0.1529411765, green: 0.168627451, blue: 0.2078431373, alpha: 1)
         cancelButton.tintColor = #colorLiteral(red: 0.1529411765, green: 0.168627451, blue: 0.2078431373, alpha: 1)
         
-        sizeTextField.inputView = picker
+        sizeTextField.inputView = sizePicker
         sizeTextField.tintColor = UIColor.clear // hides the cursor
         sizeTextField.inputAccessoryView = toolBar
         
 //        colorTextField.inputView = picker
 //        colorTextField.inputAccessoryView = toolBar
         
+        let colorPicker: UIPickerView
+        colorPicker = UIPickerView()
+        colorPicker.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        colorPicker.showsSelectionIndicator = true
+        colorPicker.delegate = self
+        colorPicker.dataSource = self
+        
+        colorTextField.inputView = colorPicker
+        colorTextField.tintColor = UIColor.clear
+        colorTextField.inputAccessoryView = toolBar
+        
+        
+        
     }
+    
+    var selectedSize: String?
+    var selectedColor: String?
+    
     
     @objc func doneClicked (sender: UIBarButtonItem) {
         self.sizeTextField.resignFirstResponder()
-        priceButton.isEnabled = true
-        priceButton.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.5058823529, blue: 0.537254902, alpha: 1)
+        self.colorTextField.resignFirstResponder()
+        
+        if selectedColor != nil && selectedSize != nil {
+            priceButton.isEnabled = true
+            priceButton.backgroundColor = #colorLiteral(red: 0.737254902, green: 0.5058823529, blue: 0.537254902, alpha: 1)
+        }
+        
     }
 }
 

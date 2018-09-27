@@ -28,14 +28,14 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AJh-gs-ll7">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="AJh-gs-ll7">
                         <rect key="frame" x="15" y="15" width="330" height="76.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="rcM-lQ-T9H">
-                                <rect key="frame" x="0.0" y="9.5" width="221" height="67"/>
+                                <rect key="frame" x="0.0" y="9.5" width="225" height="67"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select a Size" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KyI-nw-Ycq">
-                                        <rect key="frame" x="0.0" y="0.0" width="221" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="30"/>
                                         <color key="backgroundColor" red="0.84317496827411165" green="0.84317496827411165" blue="0.84317496827411165" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -45,9 +45,12 @@
                                                 <color key="value" red="0.76470588235294112" green="0.5490196078431373" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sizeTapped:" destination="srx-j6-PPm" eventType="editingDidBegin" id="bQK-hA-2dP"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select a Color" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ww-LK-fZw">
-                                        <rect key="frame" x="0.0" y="37" width="221" height="30"/>
+                                        <rect key="frame" x="0.0" y="37" width="225" height="30"/>
                                         <color key="backgroundColor" red="0.84317496827411165" green="0.84317496827411165" blue="0.84317496827411165" alpha="0.50695633561643838" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -57,6 +60,9 @@
                                                 <color key="value" red="0.76470588235294112" green="0.5490196078431373" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="colorTapped:" destination="srx-j6-PPm" eventType="editingDidBegin" id="oAd-iz-cfM"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
