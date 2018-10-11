@@ -27,7 +27,7 @@ struct VariantBuilder {
         var colors = [String]()
         for variant in product.variants.items {
             let string = variant.title
-            let color = string.split(separator: "/")[0].trimmingCharacters(in: .whitespacesAndNewlines)
+            let color = string.split(separator: "/")[1].trimmingCharacters(in: .whitespacesAndNewlines)
             if !colors.contains(color) {
                 colors.append(color) // assuming the array sorts them correctly
             }
@@ -35,12 +35,17 @@ struct VariantBuilder {
         return colors
     }
     
-    func getVariant(from product: ProductViewModel, for size: String, and color: String) -> VariantViewModel {
+    static func getVariant(from product: ProductViewModel, forSize size: String, andColor color: String) -> VariantViewModel {
         // combine size and color with a " / " in the middle
+        var finalTitle = size + " / " + color
         // querry the product.variants.items.titles for a match
+        let finalVariantIndex = product.variants.items.firstIndex { ( item ) -> Bool in
+            return item.title == finalTitle
+        }
+        
         // grab the matching index
         // retun the variant at that index
-        return product.variants.items.first!
+        return product.variants.items[finalVariantIndex!]
     }
 }
 

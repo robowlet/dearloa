@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3882DF47216F8F4500FCD477 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3882DF46216F8F4500FCD477 /* GoogleService-Info.plist */; };
 		5493D85D9ACABA0B23588004 /* Pods_Dear_Loa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B97B9AD39114C60B45AAD7 /* Pods_Dear_Loa.framework */; };
 		5F9759F3E6DF9A6D9AD19D15 /* Pods_Dear_LoaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF50D2994F5159C6E0C748DB /* Pods_Dear_LoaTests.framework */; };
 		7010F6A920F847B000C9F8FF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7010F6A820F847B000C9F8FF /* CloudKit.framework */; };
@@ -82,7 +83,6 @@
 		708D72352110BBA300DC7E05 /* ProductHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708D72342110BBA300DC7E05 /* ProductHeaderCell.xib */; };
 		708D72372110BBE300DC7E05 /* ProductDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708D72362110BBE300DC7E05 /* ProductDetailsCell.xib */; };
 		708D72392110BC3C00DC7E05 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 708D72382110BC3C00DC7E05 /* CartCell.xib */; };
-		70D4A9B8213ECCB100F53E43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70D4A9B7213ECCB100F53E43 /* GoogleService-Info.plist */; };
 		70F8CD5B20FE3ECD00DF3904 /* reviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8CD5A20FE3ECD00DF3904 /* reviewsViewController.swift */; };
 		BA56D8181AF2D27362A6E235 /* Pods_Dear_LoaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4061D70FB6CE3737C9ACC /* Pods_Dear_LoaUITests.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +107,7 @@
 /* Begin PBXFileReference section */
 		24F4061D70FB6CE3737C9ACC /* Pods_Dear_LoaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dear_LoaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		258BDA60C2333377487FF2AC /* Pods-Dear LoaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear LoaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dear LoaUITests/Pods-Dear LoaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3882DF46216F8F4500FCD477 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6793406814A1A1381F2D3078 /* Pods-Dear Loa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Loa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dear Loa/Pods-Dear Loa.debug.xcconfig"; sourceTree = "<group>"; };
 		7010F6A720F847AE00C9F8FF /* Dear Loa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dear Loa.entitlements"; sourceTree = "<group>"; };
 		7010F6A820F847B000C9F8FF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -189,7 +190,6 @@
 		708D72342110BBA300DC7E05 /* ProductHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductHeaderCell.xib; sourceTree = "<group>"; };
 		708D72362110BBE300DC7E05 /* ProductDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsCell.xib; sourceTree = "<group>"; };
 		708D72382110BC3C00DC7E05 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
-		70D4A9B7213ECCB100F53E43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70F8CD5A20FE3ECD00DF3904 /* reviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reviewsViewController.swift; sourceTree = "<group>"; };
 		78016355936392B643FAECBD /* Pods-Dear LoaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear LoaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dear LoaTests/Pods-Dear LoaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		93E66394D3BF8B902D6F6C53 /* Pods-Dear Loa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dear Loa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dear Loa/Pods-Dear Loa.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,8 +259,8 @@
 				7017D0CC20F65A820078D984 /* DLTabBarController.swift */,
 				7010F6AA20FCDDE900C9F8FF /* HomeViewController.swift */,
 				70F8CD5A20FE3ECD00DF3904 /* reviewsViewController.swift */,
-				70D4A9B7213ECCB100F53E43 /* GoogleService-Info.plist */,
 				7017D0A020F4F4250078D984 /* Dear_Loa.xcdatamodeld */,
+				3882DF46216F8F4500FCD477 /* GoogleService-Info.plist */,
 				7017D0A820F4F4270078D984 /* Info.plist */,
 				708D71E02110A8FC00DC7E05 /* Formatters */,
 				708D71EA2110AD4E00DC7E05 /* UI */,
@@ -569,7 +569,7 @@
 				7017D09220F4F4250078D984 /* Sources */,
 				7017D09320F4F4250078D984 /* Frameworks */,
 				7017D09420F4F4250078D984 /* Resources */,
-				915156AF44EB4D3A308ECDBC /* [CP] Embed Pods Frameworks */,
+				493E72E5962EC8BBB70CFD6B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -676,7 +676,7 @@
 			files = (
 				7017D0A720F4F4270078D984 /* LaunchScreen.storyboard in Resources */,
 				708D72372110BBE300DC7E05 /* ProductDetailsCell.xib in Resources */,
-				70D4A9B8213ECCB100F53E43 /* GoogleService-Info.plist in Resources */,
+				3882DF47216F8F4500FCD477 /* GoogleService-Info.plist in Resources */,
 				708D72392110BC3C00DC7E05 /* CartCell.xib in Resources */,
 				708D72312110B87E00DC7E05 /* ProductCell.xib in Resources */,
 				708D72332110BB5800DC7E05 /* CollectionCell.xib in Resources */,
@@ -703,6 +703,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		493E72E5962EC8BBB70CFD6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Dear Loa/Pods-Dear Loa-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Mobile-Buy-SDK/MobileBuySDK.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobileBuySDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dear Loa/Pods-Dear Loa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5184B1E41FFA2DAC622015D8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -737,30 +765,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		915156AF44EB4D3A308ECDBC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Dear Loa/Pods-Dear Loa-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Mobile-Buy-SDK/MobileBuySDK.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobileBuySDK.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dear Loa/Pods-Dear Loa-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9FF9591627004315F62F3C6F /* [CP] Check Pods Manifest.lock */ = {

@@ -10,6 +10,9 @@ import UIKit
 
 protocol ProductHeaderDelegate: class {
     func productHeader(_ cell: ProductHeaderCell, didAddToCart sender: Any)
+    var sizeValues: [String] { get }
+    var colorValues: [String] { get }
+    func variantPrice(cell: ProductHeaderCell) -> String
 }
 
 class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDataSource, UIPickerViewDelegate {
@@ -18,18 +21,18 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     @IBOutlet weak var colorTextField: UITextField!
     
     @IBAction func sizeTapped(_ sender: Any) {
-        pickerValues = sizeValues
+        pickerValues = delegate!.sizeValues
         pickerDidSelectValue = { row in
-            self.sizeTextField.placeholder = self.sizeValues[row]
-            self.selectedSize = self.sizeValues[row]
+            self.sizeTextField.placeholder = self.pickerValues[row]
+            self.selectedSize = self.pickerValues[row]
             // set the size on the selected item in the cart...?
         }
     }
     @IBAction func colorTapped(_ sender: Any) {
-        pickerValues = colorValues
+        pickerValues = delegate!.colorValues
         pickerDidSelectValue = { row in
-            self.colorTextField.placeholder = self.colorValues[row]
-            self.selectedColor = self.colorValues[row]
+            self.colorTextField.placeholder = self.pickerValues[row]
+            self.selectedColor = self.pickerValues[row]
             // set the color on the selected item in the cart...?
         }
     }
@@ -46,29 +49,29 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
     // SIZE PICKER
     
     
-    
-    private var sizePicker: UIPickerView!
-    private let sizeValues = ["0-3 months",
-                              "3-6 months",
-                              "6-9 months",
-                              "9-12 months",
-                              "12-18 months",
-                              "18-24 months",
-                              "2T",
-                              "3T",
-                              "4T"]
-    
-    // COLOR PICKER
-    private var colorPicker: UIPickerView!
-    private let colorValues = ["Cream Floral",
-                               "Nutmeg Gingham",
-                               "Fall Liberty Floral",
-                               "Navy",
-                               "Charcoal Grey",
-                               "Pink",
-                               "White",
-                               "Gold",
-                               "Blah"]
+//
+//    //private var sizePicker: UIPickerView!
+//    private let sizeValues = ["0-3 months",
+//                              "3-6 months",
+//                              "6-9 months",
+//                              "9-12 months",
+//                              "12-18 months",
+//                              "18-24 months",
+//                              "2T",
+//                              "3T",
+//                              "4T"]
+//
+//    // COLOR PICKER
+//    //private var colorPicker: UIPickerView!
+//    private let colorValues = ["Cream Floral",
+//                               "Nutmeg Gingham",
+//                               "Fall Liberty Floral",
+//                               "Navy",
+//                               "Charcoal Grey",
+//                               "Pink",
+//                               "White",
+//                               "Gold",
+//                               "Blah"]
     
     var pickerValues = [String]()
     var pickerDidSelectValue: ((Int) -> Void)?
@@ -89,6 +92,7 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
         print("row: \(row)")
         print("value: \(pickerValues[row])")
         pickerDidSelectValue?(row)
+        priceButton.setTitle(delegate?.variantPrice(cell: self), for: .normal)
         
 //        sizeTextField.placeholder = "\(sizeValues[row])"
 //        colorTextField.placeholder = "\(colorValues[row])"
@@ -116,7 +120,11 @@ class ProductHeaderCell: UITableViewCell, ViewModelConfigurable, UIPickerViewDat
         self.viewModel = viewModel
         
         //self.titleLabel.text = viewModel.title
-        self.priceButton.setTitle(viewModel.price, for: .normal)
+        if let delegate = delegate {
+            self.priceButton.setTitle(delegate.variantPrice(cell: self), for: .normal)
+        } else {
+            self.priceButton.setTitle(viewModel.price, for: .normal)
+        }
         priceButton.isEnabled = false
         priceButton.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         setupPickers()

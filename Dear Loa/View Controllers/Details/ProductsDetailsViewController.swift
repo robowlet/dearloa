@@ -95,10 +95,30 @@ extension ProductDetailsViewController {
 //  MARK: - ProductHeaderDelegate -
 //
 extension ProductDetailsViewController: ProductHeaderDelegate {
-    
     func productHeader(_ cell: ProductHeaderCell, didAddToCart sender: Any) {
-        let item = CartItem(product: self.product, variant: self.product.variants.items[0])
+        guard let selectedSize = cell.selectedSize, let selectedColor = cell.selectedColor else {
+            return
+        }
+        let variant = VariantBuilder.getVariant(from: product, forSize: selectedSize, andColor: selectedColor)
+        let item = CartItem(product: self.product, variant: variant)
         CartController.shared.add(item)
+    }
+    
+    var sizeValues: [String] {
+        return VariantBuilder.getSizes(product: product)
+    }
+    
+    var colorValues: [String] {
+        return VariantBuilder.getColors(product: product)
+    }
+    
+    func variantPrice(cell: ProductHeaderCell) -> String {
+        guard let selectedSize = cell.selectedSize, let selectedColor = cell.selectedColor else {
+            let price = Currency.stringFrom(product.variants.items.first!.price)
+            return price
+        }
+       var selcetedVariant = VariantBuilder.getVariant(from: product, forSize: selectedSize, andColor: selectedColor)
+        return Currency.stringFrom(selcetedVariant.price)
     }
 }
 
